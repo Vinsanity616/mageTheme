@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * local.xml
+ * Local layout modifications
+ * @category    design
+ * @package     bevelwise
+ * @copyright   Copyright (c) 2014 Bevelwise
+ */
+-->
+<layout version="0.1.0">
+	<default translate="label" module="page">
+	    
+	    <!-- remove magento default blocks -->
+	    <remove name="right.reports.product.viewed" />
+	    <remove name="left.reports.product.viewed" />
+	    <remove name="right.poll" />
+	    <remove name="cart_sidebar" />
+	    <remove name="post.view.meta" />
+	    <remove name="persistent.remember.me" />
+	    <remove name="persistent.remember.me.tooltip" />
+	    <remove name="checkout.cart.shipping" />
+	    <remove name="post.view.meta" />
+	    <remove name="product.info.sharing" />
+		<remove name="left.permanent.callout"/>
+		<remove name="right.permanent.callout"/>
+		<remove name="tags_popular"/>
+		<remove name="paypal.partner.right.logo" />
+
+		<reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+
+			<!-- ADD TESTIMONIALS STRUCTURAL BLOCK -->
+            <block type="core/text_list" name="random_testimonial_container" as="random_testimonial_container" translate="label">
+				<label>Random Testimonial Container</label>
+            </block>
+		</reference>
+	    			
+		<reference name="head">
+
+			<!-- Adding Javascripts -->
+
+			<action method="addItem"><type>skin_js</type><name>js/jquery-1.11.2.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/noconflict.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/bootstrap.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/modernizr.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/waypoints.min.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/smoothscroll.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/scripts.js</name></action>
+			<action method="addItem"><type>skin_js</type><name>js/respond.min.js</name><params/><if>lt IE 9</if></action>
+			<action method="addItem"><type>skin_js</type><name>js/html5shiv.js</name><params/><if>lt IE 9</if></action>
+			
+
+			<!-- Removing the style.css from Base-->
+			
+			<action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+
+			<!-- Adding CSS -->
+
+			<action method="addCss"><stylesheet>css/bootstrap.min.css</stylesheet></action>
+			<action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
+
+			<block type="core/text" name="fontawesome_cdn">
+        		<action method="setText">
+            		<text><![CDATA[
+                		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+            		]]></text>
+        		</action>
+    		</block>
+
+			<block type="core/text" name="google_fonts">
+        		<action method="setText">
+            		<text><![CDATA[
+    					<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+					]]></text>
+        		</action>
+    		</block>
+
+		<reference name="top.links">
+  			<action method="removeLinkByUrl"><url helper="customer/getLoginUrl"/></action>
+			<action method="removeLinkByUrl"><url helper="customer/getAccountUrl"/></action>
+			<action method="removeLinkByUrl"><url helper="customer/getRegisterUrl"/></action>
+			<!-- <remove name="checkout_cart_link"/> -->
+  			<remove name="wishlist_link" />
+
+            <action method="addLink" translate="label title" module="customer"><label>My Account</label><url helper="customer/getAccountUrl"/><title>My Account</title><prepare/><urlParams/><position>110</position></action>
+			<action method="addLink" translate="label title">
+			    <label>My Wishlist</label>
+			    <url>wishlist</url>
+			    <title>My Wishlist</title>
+			    <prepare>true</prepare>
+			    <urlParams helper="core/url/getHomeUrl"/>
+			    <position>120</position>
+			    <liParams>id="wishlist"</liParams>
+			    <aParams>class="wishlist"</aParams>
+			</action>
+
+		</reference>
+
+
+		</reference>
+
+  		
+  		<reference name="left">
+  			
+		</reference>
+
+		
+		<reference name="footer">
+			<block type="newsletter/subscribe" name="footer.newsletter" as="footer-newsletter" template="newsletter/subscribe.phtml"/>
+		</reference>
+
+	</default>
+
+    <catalog_category_default translate="label">
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+        </reference>
+    
+    </catalog_category_default>
+
+
+    <catalog_product_view translate="label">
+
+        <reference name="root">
+            <action method="setTemplate"><template>page/1column.phtml</template></action>
+        </reference>
+
+    </catalog_product_view>
+
+
+</layout>

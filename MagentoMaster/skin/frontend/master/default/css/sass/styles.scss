@@ -1,0 +1,208 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/**************************************GENERAL************************************/
+@import "variables";
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #000;
+    background: #fff;
+    overflow-x: hidden;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+::selection {
+    background: $primaryColor; /* Safari */
+    color: #fff;
+}
+::-moz-selection {
+    background: $primaryColor; /* Firefox */
+    color: #fff;
+}
+.container {
+    position: relative;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headingsFont;
+    font-weight: 400;
+    color: $headingColor;
+    display: block;
+    text-transform: uppercase;
+    margin: 15px 0;
+}
+h1 {
+    font-size: 30px;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 22px;
+}
+h4 {
+    font-size: 20px;
+}
+h5 {
+    font-size: 18px;
+}
+h6 {
+    font-size: 16px;
+}
+b, strong {
+    font-weight: 600;
+}
+img.alignright {
+    padding: 4px;
+    margin: 0 0 2px 7px;
+    display: inline;
+    }
+img.alignleft {
+    padding: 4px;
+    margin: 0 7px 2px 0;
+    display: inline;
+    }
+img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alignright {
+    float: right;
+    }
+.alignleft {
+    float: left;
+    }
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+a, a:hover {
+    color: $pageLinks;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-decoration: underline;
+}
+a:focus,
+a:active {
+	color: $pageLinksActiveFocus;
+    background: $pageLinksActiveFocusBackground;
+}
+p {
+    margin: 0 0 20px;
+}
+.table {
+    display: table;   /* Allow the centering to work */
+    margin: 0 auto;
+    width: auto;
+}
+table.table {
+	margin: 0 !important;
+}
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+sup {
+	font-size: 60%;
+}
+em {
+	font-style: italic;
+}
+.button {
+	-webkit-border-radius: 10;
+	-moz-border-radius: 10;
+	border-radius: 10px;
+	color: $btnColor;
+	background-color: $btnBkgColor;
+	padding: 3px 12px;
+	text-decoration: none;
+	border: 1px solid $btnBorderColor;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+	&:hover {
+		color: $btnHoverColor;
+		background-color: $btnHoverBkgColor;
+	}
+}
+.iframe-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.iframe-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/* Image style */
+#scrollUp {
+    background: url('../images/top.png');
+    bottom: 20px;
+    right: 20px;
+    width: 38px;    /* Width of image */
+    height: 38px;   /* Height of image */
+}
+/**************************************IMPORTS************************************/
+@import "page";
+@import "forms";
+@import "default";
+@import "header";
+@import "homepage";
+@import "product";
+@import "flexslider";
+@import "category";
+@import "sidebar";
+@import "footer";
+@import "media";

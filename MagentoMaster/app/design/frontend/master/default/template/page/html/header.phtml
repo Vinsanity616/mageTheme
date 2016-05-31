@@ -1,0 +1,48 @@
+<div id="topbar">
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-12">
+
+		    	<div class="social-container">
+
+		    		<ul>
+						<li><a target="_blank" href="https://www.facebook.com/saramariemshefit?fref=ts"><span><i class="fa fa-facebook"></i></span></a></li>
+						<li><a target="_blank" href="https://twitter.com/Shefit"><span><i class="fa fa-twitter"></i></span></a></li>
+						<li><a target="_blank" href="https://www.pinterest.com/shefitsportsbra/"><span><i class="fa fa-pinterest"></i></span></a></li>
+						<li><a target="_blank" href="https://www.youtube.com/user/shefitsportsbra"><span><i class="fa fa-youtube"></i></span></a></li>
+						<li><a target="_blank" href="#"><span><i class="fa fa-rss"></i></span></a></li>
+						<li><a target="_blank" href="#"><span><i class="fa fa-instagram"></i></span></a></li>
+					</ul>
+
+		    	</div>
+
+				<div class="topLinks"><?php echo $this->getChildHtml('topLinks') ?></div>
+
+			</div><!-- end col md 12 -->
+
+		</div><!-- end row -->
+
+	</div><!-- end container -->
+
+</div><!-- end top bar -->
+
+	<div class="container header-container">
+
+		<div class="col-md-12">
+
+			<div class="header-logo">
+
+				<a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+
+			</div><!-- end header logo -->
+
+			<div class="main-search-container"><?php echo $this->getChildHtml('topSearch') ?></div>
+
+		    <div class="nav-container"><?php echo $this->getChildHtml('topMenu') ?></div>
+
+		</div><!-- end col md 12 -->
+
+	</div><!-- end header-container -->

@@ -1,0 +1,48 @@
+<?php
+$_categories = $this->getCurrentChildCategories ();
+$_helper = $this->helper ( 'catalog/output' );
+?>
+
+<div class="listing-type-list catalog-listing">
+
+    <?php
+
+    foreach ( $_categories as $_category ):
+        ?>
+
+        <?php if ( $_category->getIsActive () ): ?>
+        <?php
+        if ( $_category->getListingName () )
+        {
+            $name = $_category->getListingName ();
+        }
+        else
+        {
+            $name = $_category->getName ();
+        }
+        $_category = Mage :: getModel ( 'catalog/category' ) ->load ( $_category ->getId () );
+        ?>
+
+        <div class="listing-item">
+
+            <?php if ( $_category->getImageUrl () ): ?>
+
+                <div class="product-image col-md-4">
+
+                    <a href="<?php echo $_category->getURL () ?>" title="<?php echo $this->htmlEscape ( $name ) ?>"><img src="<?php echo $_category->getImageUrl () ?>" width="205" alt="<?php echo $this->htmlEscape ( $name ) ?>"/></a>
+
+		            <?php else: ?>
+
+		            <?php endif; ?>
+
+		            <div class="product-cagetory-title"><a href="<?php echo $_category->getURL () ?>" title="<?php echo $this->htmlEscape ( $name ) ?>"><?php echo $this->htmlEscape ( $name ) ?></a></div>
+
+		        </div><!-- end col md 4 -->
+
+        </div><!-- end listing item -->
+
+    <?php endif; ?>
+
+    <?php endforeach; ?>
+
+</div><!-- end catalog listing -->

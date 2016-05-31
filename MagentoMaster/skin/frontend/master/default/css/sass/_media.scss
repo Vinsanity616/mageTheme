@@ -1,0 +1,42 @@
+@media all and (max-width: 1199px) {
+
+}
+
+@media all and (max-width: 991px) {
+	.left-sidebar-content {
+		float: none;
+	}
+}
+
+@media all and (min-width: 767px) {
+	.navbar-collapse.collapse { padding: 0px; }
+}
+@media all and (max-width: 767px) {
+	.navbar-collapse.in {
+		overflow: visible;
+	}
+	.navbar-nav {
+		float: none;
+	}
+	header .header-container .nav-container li { 
+		display: block;
+		width: 100%;
+		float: none;
+		text-align: center;
+	}
+	header .header-container .nav-container li a { padding: 5px; }
+	.nav>li>a { padding: 5px; }
+	.nav-tabs li a { font-size: 13px; }
+	.cms-index-index .home-page-content .home-testimonials { font-size: 18px; }
+	header nav li a { width: 100%; }
+}
+@media all and (max-width: 520px) {
+	.nav-tabs>li { float: none; }
+	#checkoutSteps li .step-title h2 {
+	  font-size:18px;
+	  margin-left: 15px;
+	}
+	#checkout-progress-wrapper .block-title strong span { font-size: 18px; }
+	#checkoutSteps li .step-title .number,
+	#checkoutSteps li .step-title a { display: none; }
+}

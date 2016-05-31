@@ -1,0 +1,41 @@
+.left-col-content {
+	float: right;
+}
+
+.left-sidebar {
+	.category-list {
+		margin-bottom: 25px;
+		
+		ol {
+			list-style-type: none;
+
+			li {
+				margin-bottom: 5px;
+
+				a {
+					text-decoration: none;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+.wp-sidebar {
+	margin-top: 24px;
+	ul {
+		padding: 0px;
+		list-style-type: none;
+	}
+	a {
+		text-decoration: none;
+		font-style: normal;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

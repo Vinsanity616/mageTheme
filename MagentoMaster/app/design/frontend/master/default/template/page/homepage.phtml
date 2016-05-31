@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+
+<html>
+
+    <head>
+
+        <?php echo $this->getChildHtml('head') ?>
+
+    </head>
+
+    <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+
+        <?php echo $this->getChildHtml('after_body_start') ?>
+
+        <?php echo $this->getChildHtml('global_notices') ?>     
+                        
+            <header>
+
+                <?php echo $this->getChildHtml('header') ?>
+
+            </header>
+            
+            <section class="home-slider">
+
+                <img style="width: 100%;" src="http://lorempixel.com/output/technics-q-c-1398-480-5.jpg">
+
+            </section>
+
+            <main class="home-page-content">
+
+                <div class="container">
+                   
+                    <div class="row">
+                        
+                        <div class="col-md-12">
+
+                            <?php echo $this->getChildHtml('breadcrumbs') ?>
+
+                            <?php echo $this->getChildHtml('global_messages') ?>
+
+                        </div><!-- end col md 12 -->
+
+                    </div><!-- end row home-page-content -->
+
+                    <div class="row">
+                    	
+                    	<div class="col-md-8">
+
+                            <?php echo $this->getChildHtml('content') ?>
+
+                    	</div><!-- end col md 6 -->
+
+                    	<div class="col-md-4">
+								
+								<div class="page-block"><?php // echo $this->getLayout()->createBlock('cms/block')->setBlockId('homepage-content-video')->toHtml(); ?></div>
+
+                    	</div><!-- end col md 6 -->
+                    
+                    </div><!-- end row -->
+
+                </div><!-- end container -->
+
+            </main><!-- end home-page-content -->
+            
+            <footer>
+                
+                <?php echo $this->getChildHtml('footer') ?>
+                
+            </footer>
+            
+            <?php echo $this->getChildHtml('before_body_end') ?>
+                            
+    </body>
+    
+</html>

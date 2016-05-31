@@ -1,0 +1,42 @@
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+?>
+
+<div class="flexslider">
+	<ul class="slides">
+    <?php if (count($this->getGalleryImages()) == 0): ?>
+	    <?php
+	        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize().'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+	        echo $_helper->productAttribute($_product, $_img, 'image');
+	    ?>
+	    <?php elseif (count($this->getGalleryImages()) > 0): ?>
+
+	    <?php foreach ($this->getGalleryImages() as $_image): ?>
+	    	<li data-thumb="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(); ?>">
+	           <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+	       </li>
+	    <?php endforeach; ?>
+    <?php endif ?>
+	</ul>
+</div>
+
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+  <script defer type="text/javascript" src="<?php echo $this->getSkinUrl() ?>js/jquery.flexslider.js"></script>
+
+  <script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        controlNav: "thumbnails",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>

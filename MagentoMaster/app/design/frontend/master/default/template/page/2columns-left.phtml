@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+
+		<?php echo $this->getChildHtml('head') ?>
+
+	</head>
+
+	<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+
+		<?php echo $this->getChildHtml('after_body_start') ?>
+
+		<?php echo $this->getChildHtml('global_notices') ?>		
+						
+			<header>
+
+				<?php echo $this->getChildHtml('header') ?>
+
+			</header>
+					
+			<section class="page-content">
+
+				<div class="container">
+
+					<div class="row">
+						
+						<div class="col-md-12">
+
+							<?php echo $this->getChildHtml('breadcrumbs') ?>
+
+							<?php echo $this->getChildHtml('global_messages') ?>
+
+						</div>
+
+					</div>
+
+					<div class="row">
+						
+						<div class="col-md-9 left-col-content">
+
+							<?php echo $this->getChildHtml('content') ?>
+							
+						</div><!-- end col md 9 -->
+				
+						<aside class="left-sidebar col-md-3">
+
+							<?php echo $this->getChildHtml('left') ?>
+							
+						</aside>
+
+					</div><!-- end row -->
+
+				</div><!-- end container -->
+
+			</section><!-- end page content -->
+			
+			<footer>
+				
+				<?php echo $this->getChildHtml('footer') ?>
+				
+			</footer>
+			
+			<?php echo $this->getChildHtml('before_body_end') ?>
+					
+		<?php echo $this->getAbsoluteFooter() ?>
+		
+	</body>
+	
+</html>

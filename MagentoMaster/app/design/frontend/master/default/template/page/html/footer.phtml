@@ -1,0 +1,87 @@
+<div class="container">
+
+    <div class="row">
+
+		<div class="col-md-2">
+
+	        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer-left-column')->toHtml(); ?>
+
+		</div><!-- end col md 2 -->
+
+	    <div class="col-md-2">
+
+	        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer-left-middle-column')->toHtml(); ?>
+
+	    </div><!-- end col md 2 -->
+
+	    <div class="col-md-4">
+
+	    	<div class="social">
+
+	    		<ul>
+					<li><a target="_blank" href="https://www.facebook.com"><span><i class="fa fa-facebook"></i></span></a></li>
+					<li><a target="_blank" href="https://twitter.com"><span><i class="fa fa-twitter"></i></span></a></li>
+					<li><a target="_blank" href="https://www.pinterest.com/"><span><i class="fa fa-pinterest"></i></span></a></li>
+					<li><a target="_blank" href="https://www.youtube.com/"><span><i class="fa fa-youtube"></i></span></a></li>
+					<li><a target="_blank" href="#"><span><i class="fa fa-instagram"></i></span></a></li>
+				</ul>
+
+	    	</div><!-- end social -->
+
+
+	    </div><!-- end col md 4 -->
+
+	    <div class="col-md-2">
+
+	        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer-right-middle-column')->toHtml(); ?>
+
+	    </div><!-- end col md 2 -->
+
+	    <div class="col-md-2">
+
+	        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer-right-column')->toHtml(); ?>
+
+	    </div><!-- end md col 2 -->
+
+	</div><!-- end row -->
+
+</div><!-- end container -->
+
+<div class="container copyright">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <?php echo $this->getCopyright() ?>
+
+        </div><!-- end col md 12 -->
+
+   </div><!-- end row -->
+
+</div><!-- end container copyright -->
+
+<script src="<?php echo $this->getSkinUrl('js/waypoints.min.js'); ?>"></script>
+<script src="<?php echo $this->getSkinUrl(); ?>js/jquery.scrollUp.min.js"></script>
+<script src="<?php echo $this->getSkinUrl('js/scripts.js'); ?>"></script>
+
+
+<!--
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "Example Name",
+  "logo": "http://example.com/skin/frontend/vikingspa/default/images/logo.png",
+  "url" : "http://example.com",
+  "sameAs" : [
+	"https://www.facebook.com/example",
+	"https://twitter.com/example",
+	"https://www.pinterest.com/example",
+	"https://plus.google.com/example",
+	"https://www.linkedin.com/company/example",
+	"https://www.youtube.com/channel/example"
+  ]
+}
+</script>
+-->

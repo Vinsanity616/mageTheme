@@ -1,0 +1,32 @@
+<?php
+
+$collection = Mage::getModel('cms/block')->getCollection()
+    ->addFieldToFilter('identifier', array('like'=>'testimonial'.'%'))
+    ->addFieldToFilter('is_active', 1);
+
+// get the count
+$blockCount = $collection->count();
+
+$_block = $this->getLayout()->createBlock('cms/block')->setBlockId($this->getIdentifier().mt_rand(1, $blockCount));
+
+if ($_block) : ?>
+
+	<div class="home-testimonials">
+                	
+		<div class="container">
+			
+			<div class="row">
+				
+				<div class="col-md-12 wp4">
+
+					<?php echo $_block->toHtml(); ?>
+					
+				</div><!-- end col md 12 -->
+
+			</div><!-- end row -->
+
+		</div><!-- end container -->
+
+    </div><!-- end home testimonials -->
+
+<?php endif; ?>
